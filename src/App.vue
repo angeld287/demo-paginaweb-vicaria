@@ -39,7 +39,12 @@
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>menu</v-icon>
       </v-btn> -->
-      <v-toolbar-title>Demo Pagina Web</v-toolbar-title>
+      <v-toolbar-title>
+        <v-btn flat key="home" to="/">
+          <v-icon class="blue--text text--lighten-2" left dark>{{ home }}</v-icon>
+          Demo Pagina Web
+        </v-btn>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-items class="hidden-xs-only">
@@ -119,11 +124,11 @@
     computed:{
       menuItems () {
         let menuItems = [
-            {icon: '', title: 'Conceptos', link: '/#'},
-            {icon: 'listy', title: 'Lista', link: '/#'},
+            {icon: '', title: 'Noticias', link: '/informacion'},
+            {icon: 'listy', title: 'Lista', link: '/lista'},
             {icon: '', title: 'Detalle', link: '/rutas'},
-            {icon: 'images', title: 'Galeria de fotos', link: '/#'},
-            {icon: 'event', title: 'Calendario de eventos', link: '/#'}
+            {icon: 'images', title: 'Galeria de fotos', link: '/galeria'},
+            {icon: 'event', title: 'Calendario de eventos', link: '/eventos'}
         ]
         return menuItems
       }

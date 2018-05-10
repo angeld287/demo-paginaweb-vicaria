@@ -1,34 +1,51 @@
 <template>
-    <v-container>
-        <v-flex xs12>
-            <v-card>
-                <!-- <v-btn type="submit" :disabled="loading" :loading="loading">
-                     History Meetings
-                     <span slot="loader" class="custom-loader">
-                       <v-icon light>cached</v-icon>
-                     </span>
-                </v-btn> -->
-            </v-card>
-        </v-flex>
-        <div>
-            <gmap-map
-                    id="map"
-                    :center="center"
-                    :zoom="15"
-                    style="width: 100%; height: 600px"
-            >
-                <gmap-marker
-                        :key="index"
-                        v-for="(m, index) in markers"
-                        :position="center = m.position"
-                        :clickable="true"
-                        :draggable="true"
-                        @click="center=m.position"
-                ></gmap-marker>
-            </gmap-map>
-        </div>
-    </v-container>
+  <v-content>
+    <!-- <v-spacer></v-spacer> -->
+    <section>
+      <v-parallax :src="require('@/assets/hero.jpeg')" height="200">
+        <v-layout column align-center justify-center>
+
+        </v-layout>
+      </v-parallax>
+    </section>
+    <!-- Seccion de contenido -->
+    <section>
+        <v-container>
+            <v-flex xs12>
+                <v-card>
+                    <!-- <v-btn type="submit" :disabled="loading" :loading="loading">
+                        History Meetings
+                        <span slot="loader" class="custom-loader">
+                        <v-icon light>cached</v-icon>
+                        </span>
+                    </v-btn> -->
+                </v-card>
+            </v-flex>
+            <div>
+                <gmap-map
+                        id="map"
+                        :center="center"
+                        :zoom="15"
+                        style="width: 100%; height: 600px"
+                >
+                    <gmap-marker
+                            :key="index"
+                            v-for="(m, index) in markers"
+                            :position="center = m.position"
+                            :clickable="true"
+                            :draggable="true"
+                            @click="center=m.position"
+                    ></gmap-marker>
+                </gmap-map>
+            </div>
+        </v-container>
+    </section>
+  </v-content>
 </template>
+
+<script>
+</script>
+
 <script>
 
     import * as VueGoogleMaps from 'vue2-google-maps';
