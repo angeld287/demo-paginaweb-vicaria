@@ -10,70 +10,66 @@
     </section>
     <!-- Seccion de contenido -->
     <section>
-      <v-layout>
-        <v-flex xs12 sm9 offset-sm1>
-        <v-toolbar>
-            <v-toolbar-side-icon></v-toolbar-side-icon>
-            <v-toolbar-title>Discover</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-btn icon>
-            <v-icon>search</v-icon>
-            </v-btn>
-        </v-toolbar>
-        <v-card>
-            <v-container fluid grid-list-md>
-            <v-layout row wrap>
+      <template>
+        <v-layout column>
+            <v-flex xs12 sm6 offset-sm3>
+            <v-toolbar color="indigo" dark>
+                <v-toolbar-side-icon></v-toolbar-side-icon>
+                <v-toolbar-title>Discover</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn icon>
+                <v-icon>search</v-icon>
+                </v-btn>
+            </v-toolbar>
+            <v-container fluid grid-list-md class="grey lighten-4">
+                <v-layout row wrap>
                 <v-flex
-                v-for="card in cards"
-                v-bind="{ [`xs${card.flex}`]: true }"
-                :key="card.title"
+                    v-bind="{ [`xs${card.flex}`]: true }"
+                    v-for="card in cards"
+                    :key="card.title"
                 >
-                <v-card>
-                    <v-card-media :src="require('@/assets/coffee-meeting.jpg')" height="200">
-                    <v-container fill-height fluid>
+                    <v-card>
+                    <v-card-media
+                        :src="require('@/assets/hero.jpeg')"
+                        height="200px"
+                    >
+                    <!-- card.src -->
+                        <v-container fill-height fluid>
                         <v-layout fill-height>
-                        <v-flex xs12 align-end flexbox>
+                            <v-flex xs12 align-end flexbox>
                             <span class="headline white--text" v-text="card.title"></span>
-                        </v-flex>
+                            </v-flex>
                         </v-layout>
-                    </v-container>
+                        </v-container>
                     </v-card-media>
-                    <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn icon>
+                    <v-card-actions class="white">
+                        <v-spacer></v-spacer>
+                        <v-btn icon>
                         <v-icon>favorite</v-icon>
-                    </v-btn>
-                    <v-btn icon>
+                        </v-btn>
+                        <v-btn icon>
                         <v-icon>bookmark</v-icon>
-                    </v-btn>
-                    <v-btn icon>
+                        </v-btn>
+                        <v-btn icon>
                         <v-icon>share</v-icon>
-                    </v-btn>
+                        </v-btn>
                     </v-card-actions>
-                </v-card>
+                    </v-card>
                 </v-flex>
-            </v-layout>
+                </v-layout>
             </v-container>
-        </v-card>
-        </v-flex>
-    </v-layout>
+            </v-flex>
+        </v-layout>
+        </template>
     </section>
   </v-content>
 </template>
-
 <script>
   export default {
     data: () => ({
       cards: [
-        { title: 'Pre-fab homes', src: '/static/doc-images/cards/house.jpg', flex: 12 },
+        { title: 'Pre-fab homes', src: 'hero.jpeg', flex: 12 },
         { title: 'Favorite road trips', src: '/static/doc-images/cards/road.jpg', flex: 6 },
-        { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 6 },
-        { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 6 },
-        { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 6 },
-        { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 12 },
-        { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 6 },
-        { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 6 },
-        { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 6 },
         { title: 'Best airlines', src: '/static/doc-images/cards/plane.jpg', flex: 6 }
       ]
     })

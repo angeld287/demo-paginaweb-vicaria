@@ -124,7 +124,7 @@
     computed:{
       menuItems () {
         let menuItems = [
-            {icon: '', title: 'Noticias', link: '/informacion'},
+            /* {icon: '', title: 'Informacion', link: '/informacion'}, */
             {icon: 'listy', title: 'Lista', link: '/lista'},
             {icon: '', title: 'Detalle', link: '/rutas'},
             {icon: 'images', title: 'Galeria de fotos', link: '/galeria'},
