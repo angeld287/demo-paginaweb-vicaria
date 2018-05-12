@@ -15,10 +15,10 @@
         <v-card>
             <v-toolbar>
             <v-toolbar-side-icon></v-toolbar-side-icon>
-            <v-toolbar-title>Inbox</v-toolbar-title>
+            <v-toolbar-title>Listado de Parroquias que pertenecen a la Vicaria</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon>
-                <v-icon>search</v-icon>
+               <!--  <v-icon>search</v-icon> -->
             </v-btn>
             <v-btn icon>
                 <v-icon>check_circle</v-icon>
@@ -26,7 +26,7 @@
             </v-toolbar>
             <v-list two-line>
             <template v-for="(item, index) in items">
-                <v-list-tile :key="index" avatar ripple @click="">
+                <v-list-tile :key="index" avatar ripple :to="item.link">
                 <v-list-tile-content>
                     <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                     <v-list-tile-sub-title class="text--primary">{{ item.headline }}</v-list-tile-sub-title>
@@ -52,11 +52,13 @@
     data () {
       return {
         items: [
-          { action: '15 min', headline: 'Brunch this weekend?', title: 'Ali Connors', subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
-          { action: '2 hr', headline: 'Summer BBQ', title: 'me, Scrott, Jennifer', subtitle: "Wish I could come, but I'm out of town this weekend." },
-          { action: '6 hr', headline: 'Oui oui', title: 'Sandra Adams', subtitle: 'Do you have Paris recommendations? Have you ever been?' },
-          { action: '12 hr', headline: 'Birthday gift', title: 'Trevor Hansen', subtitle: 'Have any ideas about what we should get Heidi for her birthday?' },
-          { action: '18hr', headline: 'Recipe to try', title: 'Britta Holt', subtitle: 'We should eat this: Grate, Squash, Corn, and tomatillo Tacos.' }
+          { action: '', headline: 'Marc Henry', title: 'Nuestra Sra. de la Altagracia', link:'/rutas', subtitle: "Cansino Adentro, Los Minas" },
+          { action: '', headline: 'Fermin de los Santos', title: 'Nuestra Sra. de la Altagracia', link:'/rutas', subtitle: "La Caleta, Boca Chica" },
+          { action: '', headline: 'Elias Nunes', title: 'San Francisco de Sales', link:'/rutas', subtitle: "Urbanizacion Fernandez Oriental, Oriental Sur" },
+          { action: '', headline: 'Jose Mariano Galdez', title: 'Nuestra Sra. de la Candelaria', link:'/rutas', subtitle: "Prado Oriental, Oriental Sur" },
+          { action: '', headline: 'Julian de la Cruz Moreta', title: 'Presentacion del Senor', link:'/rutas', subtitle: "Recidencial la Urena, Autopista Las Americas, Boca Chica" },
+          { action: '', headline: 'Nazario Hernandez Sierra', title: 'San Carlos de Jerusalen', link:'/rutas', subtitle: "Barrio Brisas del Eden Mendoza, San Isidro" },
+          { action: '', headline: 'Julian de La Cruz Moreta', title: 'Jesus Obrero', link:'/rutas', subtitle: "Residencial La Urena, Valiente, Boca Chica" }
         ]
       }
     }

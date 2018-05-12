@@ -125,8 +125,8 @@
       menuItems () {
         let menuItems = [
             /* {icon: '', title: 'Informacion', link: '/informacion'}, */
-            {icon: 'listy', title: 'Lista', link: '/lista'},
-            {icon: '', title: 'Detalle', link: '/rutas'},
+            {icon: 'listy', title: 'Parroquias', link: '/lista'},
+           /*  {icon: '', title: 'Detalle', link: '/rutas'}, */
             {icon: 'images', title: 'Galeria de fotos', link: '/galeria'},
             {icon: 'event', title: 'Calendario de eventos', link: '/eventos'}
         ]
